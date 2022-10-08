@@ -5,17 +5,33 @@
     android:layout_height="200dp">
 
     <ImageView
-        android:id="@+id/mediaImage"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:id="@+id/personImage"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
         android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent=".35" />
 
     <TextView
-        android:id="@+id/mediaTitle"
+        android:id="@+id/personName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="2"
+        android:text="Name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/personImage" />
+
+    <TextView
+        android:id="@+id/personDepartment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -23,25 +39,12 @@
         android:layout_marginEnd="10dp"
         android:ellipsize="end"
         android:maxLines="2"
-        android:text="Title"
+        android:text="Person Department"
+        android:gravity="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/mediaImage"
-        app:layout_constraintTop_toTopOf="@+id/mediaImage" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/personName" />
 
-    <TextView
-        android:id="@+id/mediaAbstract"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:ellipsize="end"
-        android:maxLines="4"
-        android:text="Abstract"
-        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/mediaImage"
-        app:layout_constraintTop_toBottomOf="@+id/mediaTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

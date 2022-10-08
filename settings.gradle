@@ -12,5 +12,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "ArticleSearch"
+rootProject.name = "flixter-project-pt2"
+//"ArticleSearch"
 include ':app'
