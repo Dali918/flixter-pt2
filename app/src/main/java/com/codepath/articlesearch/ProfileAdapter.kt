@@ -1,7 +1,6 @@
 package com.codepath.articlesearch
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 
 const val MOVIE_PROFILE = "MOVIE_PROFILE"
 private const val TAG = "ProfileAdapter"
@@ -41,14 +41,23 @@ class ProfileAdapter(private val context: Context, private val portfolio: List<W
         private val  movieDescription = itemView.findViewById<TextView>(R.id.movie_description)
 
 
+
         // TODO: Write a helper method to help set up the onBindViewHolder method
         fun bind(movie: Work) {
             movieTitle.text = movie.title
             movieDescription.text = movie.overview
 
+            val radius = 30 // corner radius, higher value = more rounded
+
+
             Glide.with(context)
+
                 .load(movie.posterImageUrl)
+                .centerCrop()
+                .transform(RoundedCorners(radius))
                 .into(moviePoster)
+
+
         }
     }
 }

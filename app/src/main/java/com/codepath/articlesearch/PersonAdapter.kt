@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.core.app.ActivityOptionsCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 
 const val PERSON_EXTRA = "PERSON_EXTRA"
 private const val TAG = "PersonAdapter"
@@ -51,9 +52,13 @@ class PeopleAdapter(private val context: Context, private val people: List<Perso
         fun bind(person: Person) {
             nameView.text = person.name
             departmentView.text = person.known_for_department
+            val radius = 50 // corner radius, higher value = more rounded
+            val margin = 10; // crop margin, set to 0 for corners with no crop
 
             Glide.with(context)
                 .load(person.mediaImageUrl)
+                .centerCrop()
+                .transform(RoundedCorners(radius))
                 .into(personImageView)
         }
 

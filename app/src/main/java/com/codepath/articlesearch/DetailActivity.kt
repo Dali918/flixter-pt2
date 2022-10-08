@@ -16,13 +16,18 @@ class DetailActivity : AppCompatActivity() {
 
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         val person = intent.getSerializableExtra(PERSON_EXTRA) as Person
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
+        val  banner = findViewById<TextView>(R.id.banner)
+
         profileRecyclerView = findViewById(R.id.profile_rv)
         profileRecyclerView.layoutManager = LinearLayoutManager(this)
         val profileAdapter = ProfileAdapter(this,person.known_for)
         profileRecyclerView.adapter = profileAdapter
+
+        banner.text = "${person.name} seen in:"
     }
 }
