@@ -2,7 +2,7 @@
 
 Submitted by: **Dalitso Banda**
 
-**Name of your app** is a movie browsing app that allows users to browse ... [TODO] 
+**Pop-Stars!** is a movie browsing app that allows users to browse the current popular stars on the MoviesDB website 
 
 Time spent: **10** hours spent in total
 
